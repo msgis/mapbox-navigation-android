@@ -44,6 +44,8 @@ import com.mapbox.services.android.navigation.v5.utils.RouteUtils;
 
 import java.util.List;
 
+import timber.log.Timber;
+
 public class NavigationViewModel extends AndroidViewModel {
 
   private static final String EMPTY_STRING = "";
@@ -258,6 +260,7 @@ public class NavigationViewModel extends AndroidViewModel {
   private ProgressChangeListener progressChangeListener = new ProgressChangeListener() {
     @Override
     public void onProgressChange(Location location, RouteProgress routeProgress) {
+      Timber.d("NAV_DEBUG - onProgressChange");
       NavigationViewModel.this.routeProgress = routeProgress;
       instructionModel.setValue(new InstructionModel(getApplication(), routeProgress, language, unitType));
       summaryModel.setValue(new SummaryModel(getApplication(), routeProgress, language, unitType, timeFormatType));
