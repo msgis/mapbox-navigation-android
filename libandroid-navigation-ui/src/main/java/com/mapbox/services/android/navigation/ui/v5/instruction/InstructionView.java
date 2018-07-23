@@ -315,6 +315,7 @@ public class InstructionView extends RelativeLayout implements FeedbackBottomShe
    * can be animated appropriately.
    */
   public void showInstructionList() {
+    instructionListAdapter.notifyDataSetChanged();
     onInstructionListVisibilityChanged(true);
     instructionLayout.requestFocus();
     beginDelayedTransition();
@@ -324,7 +325,6 @@ public class InstructionView extends RelativeLayout implements FeedbackBottomShe
     }
     instructionListLayout.setVisibility(VISIBLE);
     rvInstructions.smoothScrollToPosition(TOP);
-    instructionListAdapter.notifyDataSetChanged();
   }
 
   public boolean handleBackPressed() {
