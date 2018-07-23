@@ -7,4 +7,8 @@
     <string name="meters">m</string>
     <string name="miles">mi</string>
     <string name="feet">pie</string>
+    <!-- Hour -->
+    <string name="hr">h</string>
+    <!-- Minute -->
+    <string name="min">min</string>
 </resources>
